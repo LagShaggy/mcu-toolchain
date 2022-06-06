@@ -15,7 +15,8 @@ RUN ./installscript.sh
 
 ## untar linux
 RUN tar -xf linux-5.17.8.tar.xz
-RUN mv scripts/ linux-5.17.8
+RUN mv scripts/* linux-5.17.8/
+RUN rm scripts
 
 #RUN qemu-system-arm -machine versatileab -cpu cortex-m4 -nographic -monitor null -semihosting -append 'some program arguments' -kernel program.axf
 
