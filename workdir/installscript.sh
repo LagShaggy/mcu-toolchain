@@ -6,6 +6,7 @@ binutils-arm-none-eabi \
 make \
 gcc-arm-none-eabi \
 libncurses-dev \
+libncurses5-dev \
 flex \
 bison \
 openssl \
@@ -17,7 +18,10 @@ libpci-dev \
 libiberty-dev \
 autoconf \
 gcc-arm-linux-gnueabihf \
+gcc-arm-linux-gnueabi \
+gcc-multilib \
 lzop \
 bc \
 nano \
-curl
+curl \
+wget 
