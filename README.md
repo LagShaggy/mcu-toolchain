@@ -11,4 +11,7 @@ Run the following command:
 
 <code>bash build</code>
 
+
+https://github.com/LagShaggy/mcu-toolchain
+
 ## Todo:

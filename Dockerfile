@@ -6,10 +6,6 @@ ADD workdir/ .
 
 RUN apt-get update && apt-get upgrade -y
 
-## input all the commands for all installation prompts
-RUN printf 'y\n8\n7\n' | apt-get install -y qemu-system-arm
-
-
 ## make script executable
 RUN chmod u+x ./installscript.sh
 ## convert DOS EOL to linux

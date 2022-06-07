@@ -17,6 +17,8 @@ libudev-dev \
 libpci-dev \
 libiberty-dev \
 autoconf \
+gcc-9-arm-linux-gnueabi \
+gcc-9-arm-linux-gnueabihf \
 gcc-arm-linux-gnueabihf \
 gcc-arm-linux-gnueabi \
 gcc-multilib \
@@ -25,3 +27,5 @@ bc \
 nano \
 curl \
 wget 
+
+printf 'y\n8\n7\n' | apt-get install -y qemu-system-arm
