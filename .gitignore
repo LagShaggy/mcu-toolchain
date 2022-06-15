@@ -1,2 +1,3 @@
 workdir/linux*
 ignore
+linux_output/*

@@ -1,0 +1,2 @@
+qemu-system-arm -M virt-6.2 -m 16M -nographic -kernel vmlinux
+
