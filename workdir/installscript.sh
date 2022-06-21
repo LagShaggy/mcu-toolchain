@@ -1,6 +1,6 @@
 #!/bin/bash
-apt-get install -y \
-gcc \
+printf 'y\n8\n7\n' | apt-get install -y qemu-system-arm
+apt-get install -y gcc \
 git \
 binutils-arm-none-eabi \
 make \
@@ -12,20 +12,16 @@ bison \
 openssl \
 libssl-dev \
 dkms \
+perl \
 libelf-dev \
 libudev-dev \
 libpci-dev \
 libiberty-dev \
 autoconf \
-gcc-9-arm-linux-gnueabi \
-gcc-9-arm-linux-gnueabihf \
 gcc-arm-linux-gnueabihf \
 gcc-arm-linux-gnueabi \
-gcc-multilib \
 lzop \
 bc \
 nano \
 curl \
-wget 
-
-printf 'y\n8\n7\n' | apt-get install -y qemu-system-arm
+wget
