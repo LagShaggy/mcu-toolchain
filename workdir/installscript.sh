@@ -24,4 +24,7 @@ lzop \
 bc \
 nano \
 curl \
-wget
+wget \
+cpio \ #buildroot
+unzip \ #buildroot
+rsync \ #buildroot

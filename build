@@ -1,2 +1,2 @@
-docker build -t mcu-toolchain .
-docker run -it -v "output:/workdir/output" mcu-toolchain 
+docker build -t mcu-toolchain:v2 .
+docker run -it -v "output:/workdir/output" mcu-toolchain:v2 
