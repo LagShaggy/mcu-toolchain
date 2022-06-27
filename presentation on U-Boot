@@ -1,0 +1,10 @@
+These are notes form a presentation on Youtube:
+link: https://www.youtube.com/watch?v=5E0sdYkvq-Q&ab_channel=TheLinuxFoundation
+
+1. Create the board file
+2. Create the borad Kconfig file,
+3. Create the board Makefile,
+4. Create the borad defconfig,
+5. Create the board header file,
+6. Source board's Kconfig in the architecture's Kconfig,
+7. Define the Target Kconfig option in its CPU's Kconfig
