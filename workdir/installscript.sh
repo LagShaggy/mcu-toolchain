@@ -25,6 +25,6 @@ bc \
 nano \
 curl \
 wget \
-cpio \ #buildroot
-unzip \ #buildroot
-rsync \ #buildroot
+cpio \
+unzip \
+rsync
