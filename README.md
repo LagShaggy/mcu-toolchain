@@ -7,9 +7,15 @@ Structure of the Module:
 |--linux
    |-- linux kernel.tar.xz
 
-Run the following command:
+Run the following command on Linux:
+<code>./bashBuild.sh</code>
 
-<code>bash build</code>
+you might need to change file endings using:
+<code>sed -i -e 's/\r$//' ./bashBuild.sh </code>
+If it doesn't work the first time.
+
+Run the following command on Linux:
+<code>.\powershell-build.ps1</code>
 
 
 https://github.com/LagShaggy/mcu-toolchain
