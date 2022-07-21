@@ -1,0 +1,34 @@
+\chapter{Standarizing the IoT OSs with Linux}
+
+In this chapter we propose a way towards standardizing the heterogenious IoT edge device ecosystem with Linux. While not an easy task and coming with many stepping stones on the way, aswell as drawbacks, there certainly are a multitude of benefits that such a consensus would bring.
+
+\section{Proposal}
+%Here we write STM32L -> Linux Kernel -> Applications. Our approach is different because we are using Linux instead of RTOS, etc.
+As the layer between the user and the hardware, an OS provides an interface with which the former can input data, perform calculations and view the output, it works as a standarized layer. An Interface can be implemented as a graphical user interface (GUI), or a command line interface (CLI). With GUI's having much highter memory requirements, the CLI, such as Linux's Bourne Shell \code{sh} should provide a lightweight fit for the IoT edge device ecosystem. When it comes to OS choice in IoT, the traditional approach is to choose an real-time operating system (RTOS). With their lightweight While this solution solves many problems, such as concurrency and multi-threading. With increasing computing capabilites, MCUs have surpased the capabilities of the first PCs running the first operating systems such as UNIX and Linux. To aid the standardization process of IoT this thesis proposes the use of the Linux kernel as a primary OS on edge devices. With projects such as uClinux and Buildroot, with its support for MMU-less devices, this appears feasible.
+
+[Include Graphic that Shows: MCU -> Linux Kernel -> Applications]
+
+\section{The benefits and drawbacks of Linux on MCUs}
+
+\textbf{Benefits}
+
+With a monolithic kernel architecture, as is the case the Linux, module interaction costs are lower. Furthermore, performance is improved since, unlike in the case of microkernel, control is not transmitted between the kernel and user space~\cite{gaur2015operating}. 
+
+% Flexibility and portabiliy
+Having standardized the OS layer, applications become much more portable and thus it provides the comunity with much flexibility. Shown in section \ref{applicationOnLinuxMCU}, any programm correctly compiled will be able to run on the target system. Furthermore, very interesting use cases arise such as the use of container technology, or just namespaces, increasing portability even further.
+
+% OSS - low entrance barriers
+With the help of the open-source comunity entry barriers are lowered by a significant amount, thus future development of IoT edge device related applications are significantly easier.
+
+% energy efficient operation
+In contrast to using MPUs to operate Linux, energy efficieny is much higher, thus fitting the role of IoT better. 
+
+
+
+\textbf{Drawbacks}
+
+One might argue that for slightly higher price, development board powered by a Cortex A-* MPU, such as the RPI family, are available. These boards could fill the same purpose and have higher computing power, with more RAM and ROM. When operating Linux on such small memory, compared to the capabilites of RPI for example, the OS could take up a large proportions of the memory, thus limiting the available space for the applications that need to run on the MCU.
+
+
+
+JuiceVM printk() of 1 character for 5 seconds.

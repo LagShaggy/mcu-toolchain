@@ -1,0 +1,87 @@
+\chapter{Related Work}
+
+\section{The Internet-of-Things}
+
+There was already a market for microcontrollers at the time Intel introduced the 4004 as the first single-chip microprocessor. By the end of 1971, Texas Instruments began marketing the TMS1802, a modern calculator designed for use in cash registers, watches, and measurement devices. But the first MCU's that gained widespread use were Intel's next generation 8-bit controllers, such as the Intel 8048 and Intel 8051 operating on the MCS-51 instruction set architecture (ISA), most notably used in Desktop peripherals such as the keyboards. While these MCU's build the foundation of IoT, the edge hardware, the first primitive IoT device, a toaster that can be turned on and off remotely, was introduced in 1990~\cite{7786805}.
+
+The phrase "Internet of Things", was initially coined by Kevin Ashton in 1999. Ashton made the initial proposal for the Internet of Things (IoT), which he defined as a network of radio-frequency identification (RFID)-enabled, interoperable, linked items. IoT can include billions of intelligent, communicative "things", enabling connections between people and these things at any time, anywhere, with anything, and with anybody, preferably via any path/network and any service. Thus envisioning a system in which omnipresent and ubiquitous devices will link the Internet to every physical object~\cite{shin2014socio, wang2015introduction}.
+
+% transition isn't too smooth...
+The quantity and diversity of IoT devices and solutions have multiplied due to the markets quick development. According to IoT reports, there were between 6.1 billion and 8.4 billion IoT devices in use in 2017, in 2020 growing to 20.4 billion, and by 2025 it is anticipated that there will be 75 billion IoT devices~\cite{iot-size1, iot-size2}. Although others report fewer devices \cite{iot-size3}, the same upwards trend is captured. 
+% weird sentence
+This discrepancy is indicative of the diverse manufacturers, countless forms, and the enormous amount of devices, that make it challenging to identify a precise quantity. 
+%
+Despite the lack of definitive numbers, it clearly shows that IoT has become more relevant and omnipresent, with growth that isn't showing any signs of slowing. 
+
+% about the uses of IoT
+With Governments heavily investing into initiatives such as the UK's Future Internet Initiatives, the European Research Cluster on IoT, the National IoT Plan of China's Ministry of Industry and Information Technology, the Italian National Project of Netergit, and Japan's u-Strategy~\cite{shin2014socio}. Uses of IoT are numerous, including medical, industrial, and consumer. Examples include ............. ............ .............. and automatic irrigation systems for farms \cite{tarange2015web}.
+
+
+
+\section{IoT Architecture}
+But IoT does not only encompasss the tiny edge devices. It includes sensing, computing, networking, and cloud. Yet there is no concensus regarding IoT architecture, a multitude of models have been proposed, the most basic of which being the three-layer architecture~\cite{sethi2017internet}. 
+
+\begin{enumerate}
+\item The physical layer, which contains sensors for perceiving and gathering environmental data, is the perception layer. It detects certain physical factors or other intelligent things in the surrounding area.
+
+\item The network layer is in charge of establishing connections with other intelligent objects, network components, and servers. Its capabilities are also employed for processing and transferring sensor data. Notably IPv6........
+
+\item The application layer delivers application-specific services to the user is the responsibility. It describes a variety of uses for the IoT, including smart homes, smart cities, and smart health.
+\end{enumerate}
+
+[SHOW FIGGURE HERE]
+
+
+
+\section{The lack of standardization}
+% needs a reference.
+[I had a really good quote here, but I can't find it anymore... something about the consequence of rapid development, and the need to standardize]
+As a result of the rapid development of IoT, the industry has concentrated on creating and delivering the appropriate kinds of hardware. In the current model, the majority of IoT solution providers have been building all components of the stack, from the hardware devices to the relevant cloud services, or as they call it "IoT solutions"~\cite{banafa2016iot}.
+
+As interoperability is ensured by standardization, it improves the effective integration and information exchange between distributed systems. But manufacturers are using own standards which inevitably has the effect that devices can not talk to each other. \cite{al2016iot} conclude that the lack of standardization negatively impacts the IoT industry.
+
+The requirement for a standard model to carry out typical IoT backend functions, such as processing, storing, and firmware upgrades, is growing in importance as the industry develops. Different IoT solutions are expected to cooperate with shared backend services in this new architecture, which will provide levels of interoperability, portability, and management that are almost unattainable with the current generation of IoT systems~\cite{banafa2016iot}.
+
+"The Internet of Things Might Never Speak a Common Language"~\cite{newman2016internet}.
+
+
+
+
+\section{IoT Security Issues}
+
+The term IT-Security was defined as follows. Information integrity, availability and confidentiality~\cite{voydock1983security}. In a paper by Schiller et al. \cite{schiller} security is defined as message confindentiality. This is exclusively the case if only the sender and receiver are aware of the existence of the message and only they can verify its validity.
+
+The security strategies and procedures that have been suggested are mostly based on traditional network security procedures. However, given the variety of the devices and protocols including the quantity of nodes in the network, implementing security methods in an IoT system is more difficult than with a typical network~\cite{hassan2019current}.
+
+\section{Operating Systems on IoT} \label{iotos}
+
+\cmark
+
+Linux is a monolithic kernel..... elaborate on this.
+\cite{milinkovic2015choosing} have analysed different OS's for IoT edge devices. By compiling a list of  
+\cite{milinkovic2015choosing} goes as far as stating that "Linux will never run on these chips", by chips refering to ARM Cortex-M series.
+\cite{sabri2017comparison}
+
+
+\begin{sidewaystable}[h!]
+	\centering
+	
+	\begin{tabular}{c|c|c|c|c|c|c|c|c}
+	OS & Min RAM & Min ROM & C Support & C++ Support & Multi-Threading & MCU w/o MMU & Modularity & Realtime\\
+	\hline
+	\hline
+	Linux & $\thicksim$1MB & $\thicksim$1MB  & \cmark & \cmark & \cmark & \xmark & $\circ$ & $\circ$ \\
+	Contiki & <2kB & <30kB  & $\circ$ & \xmark & $\circ$ & \cmark & $\circ$ & $\circ$ \\
+	Tiny OS & <1kB & <4kB  & \xmark & \xmark & $\circ$ & \cmark & \xmark & \xmark \\
+	RIOT & $\thicksim$1.5kB & $\thicksim$5kB  & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark \\
+	\end{tabular}
+	\caption{Key characteristics of TinyOS, Contiki, RIOT, and Linux}
+	\label{tab:my_label}
+\end{sidewaystable}
+
+
+
+
+\section{Summary}
+
+With huge potential and growth to satisfy the rapid demand
