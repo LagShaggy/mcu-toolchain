@@ -1,8 +1,8 @@
-printf 'arm-none-eabi-as --warn --fatal-warnings -mcpu=cortex-m3 flash.s -o flash.o\n'
-arm-none-eabi-as --warn --fatal-warnings -mcpu=cortex-m3 flash.s -o flash.o
+printf 'arm-none-eabi-as --warn --fatal-warnings -mcpu=cortex-m4 flash.s -o flash.o\n'
+arm-none-eabi-as --warn --fatal-warnings -mcpu=cortex-m4 flash.s -o flash.o
 
-printf 'arm-none-eabi-gcc -Wall -O2 -ffreestanding -mcpu=cortex-m3 -mthumb -c notmain.c -o notmain.o\n'
-arm-none-eabi-gcc -Wall -O2 -ffreestanding -mcpu=cortex-m3 -mthumb -c notmain.c -o notmain.o
+printf 'arm-none-eabi-gcc -Wall -O2 -ffreestanding -mcpu=cortex-m4 -mthumb -c notmain.c -o notmain.o\n'
+arm-none-eabi-gcc -Wall -O2 -ffreestanding -mcpu=cortex-m4 -mthumb -c notmain.c -o notmain.o
 
 printf 'arm-none-eabi-ld -nostdlib -nostartfiles -T flash.ld flash.o notmain.o -o notmain.elf\n'
 arm-none-eabi-ld -nostdlib -nostartfiles -T flash.ld flash.o notmain.o -o notmain.elf

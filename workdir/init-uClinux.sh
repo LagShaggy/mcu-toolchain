@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Setting up toolchains"
 cd /workdir
