@@ -1,0 +1,2 @@
+.\esptool.exe --chip esp32 --port COM7 erase_flash
+.\esptool.exe --chip esp32 --port COM7 --baud 460800 write_flash -z 0x1000 .\juicevm-risc-v_vm-for-esp32_wrover-linux_demo.bin

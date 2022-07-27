@@ -20,6 +20,7 @@ cp /workdir/linux-emcraft/initramfs-list-min.stub /workdir/linux-emcraft/initram
 cp /workdir/linux-emcraft/arch/arm/kernel/vmlinux.lds.S.good /workdir/linux-emcraft/arch/arm/kernel/vmlinux.lds.S
 
 echo "compiling uClinux"
-make -j4 ARCH=arm CROSS_COMPILE=arm-uclinuxeabi- zImage
+make stm32f2_defconfig
+make ARCH=arm CROSS_COMPILE=arm-uclinuxeabi- vmlinux
 mkdir /workdir/output/uClinux/
 cp ./vmlinux /workdir/output/

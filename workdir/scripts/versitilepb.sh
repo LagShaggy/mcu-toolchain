@@ -1,5 +1,5 @@
-make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- mrproper
-make -j4 ARCH=arm versatile_defconfig
-make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage
-make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- modules
-make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- dtbs
+make ARCH=arm CROSS_COMPILE=arm-none-eabi- mrproper
+make ARCH=arm CROSS_COMPILE=arm-none-eabi- versatile_defconfig
+make ARCH=arm CROSS_COMPILE=arm-none-eabi- zImage
+make ARCH=arm CROSS_COMPILE=arm-none-eabi- modules
+make ARCH=arm CROSS_COMPILE=arm-none-eabi- dtbs

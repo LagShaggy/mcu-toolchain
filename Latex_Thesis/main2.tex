@@ -1,34 +1,27 @@
 \chapter{Standarizing the IoT OSs with Linux}
 
-In this chapter we propose a way towards standardizing the heterogenious IoT edge device ecosystem with Linux. While not an easy task and coming with many stepping stones on the way, aswell as drawbacks, there certainly are a multitude of benefits that such a consensus would bring.
+In this chapter, we propose a way toward standardizing the heterogeneous IoT edge device ecosystem with Linux. While not an easy task and with many stepping stones on the way, there certainly are a multitude of benefits that such a consensus would bring.
 
-\section{Proposal}
-%Here we write STM32L -> Linux Kernel -> Applications. Our approach is different because we are using Linux instead of RTOS, etc.
-As the layer between the user and the hardware, an OS provides an interface with which the former can input data, perform calculations and view the output, it works as a standarized layer. An Interface can be implemented as a graphical user interface (GUI), or a command line interface (CLI). With GUI's having much highter memory requirements, the CLI, such as Linux's Bourne Shell \code{sh} should provide a lightweight fit for the IoT edge device ecosystem. When it comes to OS choice in IoT, the traditional approach is to choose an real-time operating system (RTOS). With their lightweight While this solution solves many problems, such as concurrency and multi-threading. With increasing computing capabilites, MCUs have surpased the capabilities of the first PCs running the first operating systems such as UNIX and Linux. To aid the standardization process of IoT this thesis proposes the use of the Linux kernel as a primary OS on edge devices. With projects such as uClinux and Buildroot, with its support for MMU-less devices, this appears feasible.
+\section{Proposal}\label{proposal.ch}
+As the layer between the user and the hardware, an OS provides an interface with which the former can input data, perform calculations and view the output. OSs can be seen as a standardized layer. An interface can be implemented such as a graphical user interface (GUI), or a Command Line Interface (CLI). With GUI's having much higher memory requirements, a CLI should provide a lightweight fit for the IoT edge device ecosystem. When it comes to OS choice in IoT, the traditional approach is to choose an real-time operating system (RTOS). While these OSs introduced in Section \ref{iotos.ch}, are technically categorized as operating systems, they should rather be seen as frameworks when compared to Linux. Bare metal code can be written within these frameworks which in turn handles low-level implementations, such as threads and message passing~\cite{jaycarlson}. With increasing computing capabilities, MCUs have surpassed the capabilities of the first PCs running the first operating systems such as UNIX and Linux. To aid the standardization process of IoT this thesis proposes the use of the Linux kernel as a primary OS on edge devices. With projects such as uClinux and Buildroot, with their support for MMU-less devices, this appears beneficial and feasible.
 
-[Include Graphic that Shows: MCU -> Linux Kernel -> Applications]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{ba-arch.png}
+\caption{Proposed architecture of MCU IoT devices}
+\label{fig:ba-arch}
+\end{figure}
+
+Illustrated in Figure \ref{fig:ba-arch}, the userspace and the underlying device drivers and hardware are clearly separated from one another. With this level of abstraction, a similar level of user-friendliness, portability, and versatility can be achieved as in laptops and desktops. Precedence for this is the RPI, which has gained widespread use in the IoT industry, partially due to easily supporting Linux.
 
 \section{The benefits and drawbacks of Linux on MCUs}
-
 \textbf{Benefits}
 
-With a monolithic kernel architecture, as is the case the Linux, module interaction costs are lower. Furthermore, performance is improved since, unlike in the case of microkernel, control is not transmitted between the kernel and user space~\cite{gaur2015operating}. 
-
-% Flexibility and portabiliy
-Having standardized the OS layer, applications become much more portable and thus it provides the comunity with much flexibility. Shown in section \ref{applicationOnLinuxMCU}, any programm correctly compiled will be able to run on the target system. Furthermore, very interesting use cases arise such as the use of container technology, or just namespaces, increasing portability even further.
-
-% OSS - low entrance barriers
-With the help of the open-source comunity entry barriers are lowered by a significant amount, thus future development of IoT edge device related applications are significantly easier.
-
-% energy efficient operation
-In contrast to using MPUs to operate Linux, energy efficieny is much higher, thus fitting the role of IoT better. 
-
-
+Linux facilitates memory management, protection, and dynamic memory allocation, in section \ref{uclinux.ch} we established that this is possible without an MMU. RTOSs rely on static memory allocation, which can quickly become a problem as applications grow. Problems such as memory leaks and memory fragmentation can force the system to restart, diminishing its real-time aspect. Linux also provides a network stack that removes the requirement to program network applications, and thus ensures interoperability. Furthermore, Linux uses a standardized filesystem, that can be used to reliably manage and store data. Broader language support is another benefit, enabling the use of the same programming languages and libraries across all devices. Applications become much more portable and provide the community with much flexibility. Very interesting use cases arise such as the use of container technology, increasing portability even further. With a large open source community at its back, that maintains and updates the source regularly for many architectures, the adoption of MCU IoT devices into the arenal of Linux, should happen sooner rather than later~\cite{jaycarlson}.
 
 \textbf{Drawbacks}
 
-One might argue that for slightly higher price, development board powered by a Cortex A-* MPU, such as the RPI family, are available. These boards could fill the same purpose and have higher computing power, with more RAM and ROM. When operating Linux on such small memory, compared to the capabilites of RPI for example, the OS could take up a large proportions of the memory, thus limiting the available space for the applications that need to run on the MCU.
+One might argue that for a slightly higher price, development boards powered by a Cortex-A MPUs, such as the RPI family, are available. These boards could fill the same purpose and have higher computing power, with more RAM and ROM, at the cost of energy efficiency, size, and price. When operating Linux on such small memory, compared to the capabilities of RPI for example, the OS takes up a large proportion of the memory, thus limiting the available space for the applications that need to run on the MCU. Another aspect that needs to be overcome is the larger upfront investment when porting Linux to specific IoT devices, yet with projects such as Buildroot, this is well on the way, if not present already.
 
 
 
-JuiceVM printk() of 1 character for 5 seconds.
